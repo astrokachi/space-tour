@@ -17,6 +17,7 @@ code {
     monospace;
 }
 
+/* home styles */
 .home.container {
   background: url("./assets/home/background-home-mobile.jpg");
   background-size: 100% 100%;
@@ -24,7 +25,27 @@ code {
   /* z-index: -1; */
 }
 
+/* destination styles */
+.destination.container {
+  background: url("./assets/destination/background-destination-mobile.jpg");
+  background-size: 100% 100%;
+  height: 100vh;
+}
+/* crew */
+.crew.container {
+  background: url("./assets/crew/background-crew-mobile.jpg");
+  background-size: 100% 100%;
+  height: 100vh;
+}
 
+/* technology */
+.technology.container {
+  background: url("./assets/technology/background-technology-mobile.jpg");
+  background-size: 100% 100%;
+  height: 100vh;
+}
+
+/* navbar styles*/
 .container {
   margin: 0;
 }
@@ -37,6 +58,11 @@ code {
 .close.container {
   margin: 0;
   float: right;
+}
+
+.hamburger.container > img,
+.close.container.close :hover {
+  cursor: pointer;
 }
 
 .sidenav.container {
@@ -67,7 +93,7 @@ nav {
   margin: 0;
 }
 
-.sidenav.container > h2 {
+.tag {
   text-transform: uppercase;
   font-family: Barlow Condensed;
   font-style: normal;
@@ -77,9 +103,16 @@ nav {
   letter-spacing: 2.7px;
   padding: 0 2em 1em 0;
   color: white;
+  margin: 0em 0 1em 2em;
+  padding: 0.5em;
 }
 
-.sidenav > h2 > span {
+.link {
+  text-decoration: none;
+}
+
+.big-number,
+.small-number {
   font-family: Barlow Condensed;
   font-style: normal;
   font-weight: bold;
@@ -90,11 +123,6 @@ nav {
 
 .tag.active {
   border-right: 3px solid white;
-}
-
-.tag {
-  margin: 0em 0 1em 2em;
-  padding: 0.5em;
 }
 
 aside {
@@ -115,16 +143,46 @@ aside {
   color: #ffffff;
 }
 
-.division >span{
+.division > span {
   width: 100%;
 }
 
+.click :hover {
+  cursor: pointer;
+}
 
-@media only screen and (min-width: 700px) {
-  .home.container{
-    background: url('./assets/home/background-home-tablet.jpg');
+.logo {
+  float: left;
+}
+
+.line {
+  display: none;
+}
+
+@media only screen and (min-width: 603px) {
+  .crew.container {
+    background: url("./assets/crew/background-crew-tablet.jpg");
     background-size: 100% 100%;
     height: 100vh;
+  }
+
+  .destination.container {
+    background: url("./assets/destination/background-destination-tablet.jpg");
+    background-size: 100% 100%;
+    height: 100vh;
+  }
+
+  .technology.container {
+    background: url("./assets/technology/background-technology-tablet.jpg");
+    background-size: 100% 100%;
+    height: 100vh;
+  }
+
+  .home.container {
+    background: url("./assets/home/background-home-tablet.jpg");
+    background-size: 100% 100%;
+    height: 100vh;
+    z-index: -1;
   }
 
   .division,
@@ -143,12 +201,12 @@ aside {
     display: flex;
     flex-direction: row;
     gap: 3em;
-    padding: 0em 4em;
+    padding: 2.8em 4em;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
   }
 
-  .big-screen.nav-items {
+  .big-screen.nav-item {
     font-family: Barlow Condensed;
     font-style: normal;
     font-weight: normal;
@@ -159,6 +217,7 @@ aside {
     color: #ffffff;
     padding: 2.5em 0em;
     margin: 0;
+    text-decoration: none;
   }
 
   .container > img {
@@ -170,19 +229,38 @@ aside {
   }
 }
 
-@media only screen and (min-width: 1000px) {
-  .home.container{
-    background: url('./assets/home/background-home-desktop.jpg');
+@media only screen and (min-width: 1030px) {
+  .crew.container {
+    background: url("./assets/crew/background-crew-desktop.jpg");
     background-size: 100% 100%;
     height: 100vh;
   }
 
+  .destination.container {
+    background: url("./assets/destination/background-destination-desktop.jpg");
+    background-size: 100% 100%;
+    height: 100vh;
+  }
+
+  .technology.container {
+    background: url("./assets/technology/background-technology-desktop.jpg");
+    background-size: 100% 100%;
+    height: 100vh;
+  }
+
+  .home.container {
+    background: url("./assets/home/background-home-desktop.jpg");
+    background-size: 100% 100%;
+    height: 100vh;
+    /* display: absolute;
+    z-index: -999999; */
+  }
 
   .big-screen.nav-container {
     padding: 0em 6em;
     width: 50%;
     justify-content: space-evenly;
-    margin-top: 2em;
+    margin-top: 1.6em;
   }
 
   .container > img {
@@ -198,7 +276,7 @@ aside {
     line-height: 19px;
   }
 
-  .big-screen.nav-items {
+  .big-screen.nav-item {
     display: flex;
     gap: 0.3em;
     font-family: Barlow Condensed;
@@ -209,5 +287,18 @@ aside {
     letter-spacing: 2.7px;
 
     color: #ffffff;
+  }
+
+  .line {
+    display: unset;
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    left: 8em;
+    top: 4.5em;
+    background: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    z-index: 1;
   }
 }

@@ -1,30 +1,33 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
+import Destination from "./Destination";
+import Crew from "./Crew";
+import Technology from "./Technology";
 
 function App() {
   const [state, setState] = useState(false);
-  const [activeId, setActiveId] = useState();
+  const [activeId, setActiveId] = useState(0);
   const [tags] = useState([
     {
       number: "0",
-      name: "Home",
-      state: 'active'
+      name: "home",
+      state: "active",
     },
     {
       number: "1",
-      name: "Destination",
-      state: ''
+      name: "destination",
+      state: "",
     },
     {
       number: "2",
-      name: "Crew",
-      state: ''
+      name: "crew",
+      state: "",
     },
     {
       number: "3",
-      name: "Technology",
-      state: ''
+      name: "technology",
+      state: "",
     },
   ]);
 
@@ -32,16 +35,76 @@ function App() {
     setState(!state);
   };
 
-
-
+  const setItem = (item) => {
+    setActiveId(item.number);
+  };
 
   return (
     <div className="App">
-     <Router>
-       <Routes>
-         <Route path='/' element={ <Home state={state} handleClick={handleClick} tags={tags} setActiveId={setActiveId} activeId={activeId}/>}/>
-       </Routes>
-     </Router>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                state={state}
+                handleClick={handleClick}
+                tags={tags}
+                setItem={setItem}
+                activeId={activeId}
+              />
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <Home
+                state={state}
+                handleClick={handleClick}
+                tags={tags}
+                setItem={setItem}
+                activeId={activeId}
+              />
+            }
+          />
+          <Route
+            path="/destination"
+            element={
+              <Destination
+                state={state}
+                handleClick={handleClick}
+                tags={tags}
+                setItem={setItem}
+                activeId={activeId}
+              />
+            }
+          />
+          <Route
+            path="/crew"
+            element={
+              <Crew
+                state={state}
+                handleClick={handleClick}
+                tags={tags}
+                setItem={setItem}
+                activeId={activeId}
+              />
+            }
+          />
+          <Route
+            path="/technology"
+            element={
+              <Technology
+                state={state}
+                handleClick={handleClick}
+                tags={tags}
+                setItem={setItem}
+                activeId={activeId}
+              />
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
