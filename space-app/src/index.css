@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: dimgray;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.home.container {
+  background: url("./assets/home/background-home-mobile.jpg");
+  background-size: 100% 100%;
+  height: 100vh;
+  /* z-index: -1; */
+}
+
+
+.container {
+  margin: 0;
+}
+
+.container > img {
+  margin: 2em 2em 1em 2em;
+}
+
+.hamburger.container,
+.close.container {
+  margin: 0;
+  float: right;
+}
+
+.sidenav.container {
+  margin: 6em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup.container {
+  width: max-content;
+}
+
+.division {
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  right: 0;
+  top: 0;
+  width: 60%;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(81.5485px);
+  height: 100vh;
+  gap: 0;
+}
+
+nav {
+  margin: 0;
+}
+
+.sidenav.container > h2 {
+  text-transform: uppercase;
+  font-family: Barlow Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+  padding: 0 2em 1em 0;
+  color: white;
+}
+
+.sidenav > h2 > span {
+  font-family: Barlow Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+}
+
+.tag.active {
+  border-right: 3px solid white;
+}
+
+.tag {
+  margin: 0em 0 1em 2em;
+  padding: 0.5em;
+}
+
+aside {
+  margin: 0;
+}
+
+.big-screen.nav-container {
+  display: none;
+  font-family: Barlow Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  letter-spacing: 2.3625px;
+
+  color: #ffffff;
+}
+
+.division >span{
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 700px) {
+  .home.container{
+    background: url('./assets/home/background-home-tablet.jpg');
+    background-size: 100% 100%;
+    height: 100vh;
+  }
+
+  .division,
+  .hamburger.container,
+  .close.container,
+  .sidenav.container {
+    display: none;
+  }
+
+  .big-number {
+    display: none;
+  }
+
+  .big-screen.nav-container {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    padding: 0em 4em;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+  }
+
+  .big-screen.nav-items {
+    font-family: Barlow Condensed;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 17px;
+    letter-spacing: 2.3625px;
+    color: #ffffff;
+    padding: 2.5em 0em;
+    margin: 0;
+  }
+
+  .container > img {
+    margin: 1.4em 2em 2em 2em;
+  }
+
+  .active {
+    border-bottom: 3px solid white;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .home.container{
+    background: url('./assets/home/background-home-desktop.jpg');
+    background-size: 100% 100%;
+    height: 100vh;
+  }
+
+
+  .big-screen.nav-container {
+    padding: 0em 6em;
+    width: 50%;
+    justify-content: space-evenly;
+    margin-top: 2em;
+  }
+
+  .container > img {
+    margin: 3em 2em 2em 2em;
+  }
+
+  .big-number {
+    display: unset;
+    font-family: Barlow Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .big-screen.nav-items {
+    display: flex;
+    gap: 0.3em;
+    font-family: Barlow Condensed;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+
+    color: #ffffff;
+  }
+}
